@@ -21,13 +21,25 @@ display the following message within an alert:
 display the following message within an alert:
 "The flip was tails and you chose tails...you win!"
 */
-let coinFlip = 6;
-let randomNum = Math.round(Math.random());
-console.log(typeof randomNum);
-console.log(randomNum);
-let choice = prompt('Select Head or Tail :');
-if (coinFlip > 3) {
-    
+var coinFlip = Math.round(Math.random());
+console.log(typeof coinFlip);
+console.log(coinFlip);
+let choice = prompt('Select Head or Tail :').toLowerCase();
+console.log(choice);
+if (coinFlip >= 5) {
+    if (choice == head) {
+        document.write(`The flip was heads and you chose heads...you win!`);
+    }
+    else if (choice == tail) {
+        document.write(`The flip was heads but you chose tails...you lose!`);
+    }
+} else if (coinFlip < 5) {
+    if (choice == head) {
+        document.write(`The flip was tails but you chose heads...you lose!`);
+    }
+    else if (choice == tail) {
+        document.write(`The flip was tails and you chose tails...you win!`);
+    }
 
 }
 
